@@ -32,4 +32,8 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('carparking app is running!');
   });
+
+  it('testing....',()=>{
+    expect(true).toEqual(true)
+  })
 });

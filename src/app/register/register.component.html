@@ -1,6 +1,26 @@
 <h1>REGISTRATION</h1>
-<div>slot no:<input type="text" value=" " id="no"></div>
-<div>vehile no:<input type="text" value=" " id="vno"></div>
-<div>type:<input type="text" value=" " id="type"></div>
-<div>entrytime:<input type="text" value=" " id="et"></div>
-<div>hours of parking:<input type="text" value=" " id="hours"></div>
+<div>slot no:<input type="text"  id="no" (input)="slotno=$event.target.value"></div>
+<div>vechile no:<input type="text" id="vno" (input)="vehicleno=$event.target.value"></div>
+<div>entrytime:<input type="text" id="et" (input)="et=$event.target.value" ></div>
+<div>exittime:<input type="text" id="ext" (input)="ext=$event.target.value" ></div>
+<div>hours of parking:<input type="text" id="hours" (input)="hours=$event.target.value"></div>
+
+vehicle type:<select name="" id="vehicletype" (change)="vehicletype=$event.target.value">
+    <option value=" "></option>
+    <option value="2">2-wheeler</option>
+    <option value="4">4-wheeler</option>
+</select>
+
+<br><button (click)="submit()">submit</button>
+<br>
+two wheeler list <div *ngFor="let i of twowheeler">{{i.slotno}},{{i.vehicleno}},
+    {{i.type}},{{i.et}},{{i.ext}},{{i.hours}},{{i.vehicletype}}
+</div>
+<div> </div>
+four wheeler list<div *ngFor="let i of fourwheeler">{{i.slotno}},{{i.vehicleno}},
+    {{i.type}},{{i.et}},{{i.ext}},{{i.hours}},{{i.vehicletype}}
+</div>
+<br><input type=" " id="rno " (input)="rno=$event.target.value">
+
+<button (click)="remove2()">remove2</button>
+<button (click)="remove4()">remove4</button>

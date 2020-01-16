@@ -1,0 +1,37 @@
+<p>employe works!</p>
+<ul>
+    <li *ngFor ="let item of elist| paginate:{
+        itemsPerPage: 5,currentPage:p}">
+
+        <div>Item Id</div>
+        <div>{{item.id}}</div>
+        <div>Item <Code></Code></div>
+        <div>{{item.code}}</div>
+        <div>Item Salary</div>
+        <div>{{item.salary}}</div></li>
+
+</ul>
+<pagination-controls (pageChange)='p=$event'></pagination-controls>
+
+<!-- for button styling -->
+<button mat-icon-button>submit</button>
+<button mat-fab>save1</button>
+
+<!-- for datepiker (jus copied from the slide) -->
+<mat-form-field>
+    <input matInput [matDatepicker] = "picker" placeholder = "Choose a date">
+    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+ </mat-form-field>
+
+ <!-- menu design ...link from the slide 152..copying from that-->
+ <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Help</button>
+  </mat-menu>
+  
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>MENU</mat-icon>
+  </button>
+ 
+ 
